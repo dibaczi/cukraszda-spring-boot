@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="hu" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Főoldal | Cukrászda</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/minty/bootstrap.min.css">
+<link rel="stylesheet" th:href="@{/css/custom.css}"></head><body>
+<div th:replace="~{fragments/menu :: menu}"></div><main class="container">
+<section class="hero hero-full rounded-4 overflow-hidden mb-5">
+  <div class="row align-items-center g-0"><div class="col-md-7 p-4 p-lg-5">
+    <p class="text-uppercase fw-semibold tracking">A nap legédesebb pillanatai</p>
+    <h1 class="display-4 fw-bold">A sütemények világa egy helyen.</h1>
+    <p class="lead">Torták, teasütemények, piték és különlegességek. Böngészd a kínálatot, nézd meg az árakat és fedezd fel a díjazott finomságokat!</p>
+    <div class="d-flex gap-2 flex-wrap"><a class="btn btn-primary btn-lg" th:href="@{/adatbazis}">Kínálatunk</a>
+      <a class="btn btn-outline-dark btn-lg" th:href="@{/kapcsolat}">Kapcsolat</a></div>
+  </div><div class="col-md-5 text-center p-4"><img class="hero-photo img-fluid" src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Ugliest_Cake_in_the_World_%28Unsplash%29.jpg?width=900" alt="Virágokkal díszített torta, Brooke Lark CC0-fotó" loading="lazy"></div></div>
+</section>
+<h2 class="h3 mb-4">Mit találsz nálunk?</h2>
+<div class="row g-3">
+  <div class="col-md-4"><div class="card stat-card h-100"><div class="card-body p-4"><div class="stat-emoji">🧁</div><h3 class="h5">Sütemények</h3><div class="display-6 fw-bold" th:text="${sutiDb}">0</div><p class="text-muted mb-0">Finomság a kínálatunkban</p></div></div></div>
+  <div class="col-md-4"><div class="card stat-card h-100"><div class="card-body p-4"><div class="stat-emoji">💸</div><h3 class="h5">Árbejegyzések</h3><div class="display-6 fw-bold" th:text="${arDb}">0</div><p class="text-muted mb-0">Választható ár és kiszerelés</p></div></div></div>
+  <div class="col-md-4"><div class="card stat-card h-100"><div class="card-body p-4"><div class="stat-emoji">🌿</div><h3 class="h5">Mentességi jelölések</h3><div class="display-6 fw-bold" th:text="${tartalomDb}">0</div><p class="text-muted mb-0">Részletes választási információ</p></div></div></div>
+</div>
+<section class="mt-5 p-4 rounded-4 soft-block"><h2 class="h3">Adatokból élmény</h2>
+   <p class="mb-0">A weboldal oktatási Spring Boot projekt, valós mintadatokkal, biztonságos regisztrációval, diagramokkal és adminisztrációs funkciókkal.</p></section>
+
+</main><div th:replace="~{fragments/footer :: footer}"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script></body></html>
