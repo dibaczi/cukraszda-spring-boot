@@ -1,0 +1,22 @@
+:root { --pastry: #c77a6f; --moss: #34796b; }
+body { background: #fffcf9; color: #263538; min-height: 100vh; }
+.navbar { box-shadow: 0 3px 20px rgba(16, 48, 42, .1); }
+.hero { background: linear-gradient(115deg, #fef0e7, #fcebdc 58%, #e8f6ed); }
+.hero-full { min-height: 380px; }
+.hero h1 { letter-spacing: -.045em; line-height: 1.05; }
+.hero-pastry { font-size: clamp(9rem, 17vw, 16rem); line-height: 1.2; filter: drop-shadow(0 22px 15px rgba(83, 42, 37, .18)); }
+.tracking { letter-spacing: .15em; }
+.narrow-form { max-width: 420px; display:flex; flex-direction:column; gap:12px; }
+.narrow-form label { display:flex; flex-direction:column; gap:5px; }
+.stat-card { border-radius: 16px; border: 1px solid #e6e8e3; box-shadow: 0 4px 17px rgba(20,60,50,.04); }
+.stat-emoji { font-size: 2.2rem; }
+.form-card, .chart-card, .soft-block { background: #fff; border: 1px solid #e4e9e4; }
+.soft-block { background: #f1f9f4; }
+.table-responsive { max-height: 600px; }
+.table-responsive thead { position: sticky; top:0; z-index:1; background:#fff; }
+.wrap-text { white-space:pre-wrap; min-width:210px; overflow-wrap:anywhere; }
+.chart-area { height: min(450px, 60vh); position: relative; }
+code { color: #a44856; }
+@media (max-width:767px) { .hero-pastry { font-size: 9rem; } }
+
+.hero-photo { height: 345px; width: 100%; object-fit: cover; border-radius: 24px; box-shadow: 0 20px 35px rgba(54, 54, 43, .14); }
