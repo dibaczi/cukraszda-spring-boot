@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="hu" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagram | Cukrászda</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/minty/bootstrap.min.css">
+<link rel="stylesheet" th:href="@{/css/custom.css}"></head><body>
+<div th:replace="~{fragments/menu :: menu}"></div><main class="container">
+<p class="text-uppercase text-primary small tracking">Az adatok mesélnek</p>
+<h1>Süteménytípusok megoszlása</h1>
+<p>A diagram a <code>suti</code> tábla élő adataiból készül, a Spring Data JPA Repository összesítése alapján.</p>
+<div class="chart-card shadow-sm rounded-4 p-4">
+  <div class="chart-area"><canvas id="tipusDiagram" aria-label="Süteménytípusonkénti darabszámok" role="img"></canvas></div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <script th:inline="javascript">
+      const tipusCimkek = /*[[${cimkek}]]*/ [];
+      const tipusErtekek = /*[[${ertekek}]]*/ [];
+      new Chart(document.getElementById('tipusDiagram'), {
+        type: 'bar',
+        data: {labels: tipusCimkek, datasets: [{label: 'Sütemények száma',data: tipusErtekek,
+          backgroundColor: 'rgba(105, 170, 155, 0.72)', borderColor: 'rgb(63, 129, 115)', borderWidth: 1, borderRadius: 6}]},
+        options: {responsive: true, maintainAspectRatio: false,
+          plugins: {legend: {display:false}},
+          scales: {y: {beginAtZero: true, ticks: {precision:0}}}}
+      });
+    </script>
+
+</main><div th:replace="~{fragments/footer :: footer}"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script></body></html>
